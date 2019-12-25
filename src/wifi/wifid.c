@@ -442,17 +442,6 @@ static int manager_startup(struct manager *m)
 {
 	int r;
 
-	r = shl_mkdir_p_prefix("/run", "/run/miracle", 0755);
-	if (r >= 0)
-		r = shl_mkdir_p_prefix("/run/miracle",
-				       "/run/miracle/wifi",
-				       0700);
-	if (r < 0) {
-		log_error("cannot create maintenance directories in /run: %d",
-			  r);
-		return r;
-	}
-
 	manager_read_name(m);
 	manager_read_links(m);
 
