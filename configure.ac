@@ -37,8 +37,12 @@ LT_PREREQ(2.2)
 LT_INIT
 LT_LIB_M
 
-AC_ARG_ENABLE([rely-udev],
-              AS_HELP_STRING([--enable-rely-udev], [Use tagged device with miraclecast]), AC_DEFINE([RELY_UDEV], [], [Rely on udev to find miraclecast device]))
+dnl AC_ARG_ENABLE([rely-udev],
+dnl               AS_HELP_STRING([--enable-rely-udev], [Use tagged device with miraclecast])
+dnl	      )
+dnl AS_IF([test "x$enable_rely_udev" != xno],
+dnl           [AC_DEFINE([RELY_UDEV], [], [Rely on udev to find miraclecast device])],
+dnl      )
 AC_ARG_ENABLE([log-debug],
                   AS_HELP_STRING([--disable-log-debug], [Disable log debug]), , AC_DEFINE([BUILD_ENABLE_DEBUG], [], [Enable debug log level]))
 #
